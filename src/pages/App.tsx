@@ -7,7 +7,7 @@ import './App.scss';
 type AppStatesInterface = {};
 type AppPropsInterface = {};
 
-class App extends React.Component<AppPropsInterface, AppStatesInterface> {
+export default class App extends React.Component<AppPropsInterface, AppStatesInterface> {
     constructor(props: AppPropsInterface) {
         super(props);
     }
@@ -19,5 +19,3 @@ class App extends React.Component<AppPropsInterface, AppStatesInterface> {
         );
     }
 }
-
-export default App;
