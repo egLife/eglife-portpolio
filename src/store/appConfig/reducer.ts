@@ -49,7 +49,7 @@ export default combineReducers<ConfigState, ConfigAction> ({
             case CONFIG_UPDATE_CSS_COMPONENT_BG_COLOR:
                 return {
                     ...state,
-                    componentBgColor: action.payload
+                    componentTemaColor: action.payload
                 };
             case CONFIG_UPDATE_CSS_COMPONENT_TEXT_COLOR:
                 return {

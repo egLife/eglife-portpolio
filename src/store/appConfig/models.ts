@@ -1,5 +1,5 @@
 export type ConfigCSSDefaultType = Readonly<{
-    componentBgColor: string,
+    componentTemaColor: string,
     componentTextColor: string,
     componentTitleColor: string
 }>;

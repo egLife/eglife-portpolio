@@ -1,0 +1,99 @@
+#main {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+
+    transition-property: height, top;
+    transition-duration: 2s;
+
+    .main__backgroundImage {
+        position: absolute;
+        width: 100%;
+        height: 100%;    
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        transition-property: filter;
+        transition-duration: 1s;
+
+        filter: brightness(1);
+    }
+
+    .main__content {
+        top: 50%;
+        margin: 0 auto;
+        position: relative;
+        opacity: 1;
+        width: 80%;
+        height: 30%;
+        color: white;
+        transition-property: opacity;
+        transition-duration: 1s;
+
+        ul {
+            list-style: none;
+            letter-spacing: -0.035em;
+
+            li:nth-child(1) {
+                display: block;
+                font-size: 60px;
+
+                span {
+                    display: inline;
+                    strong {
+                        display:inline;
+                    }
+                }
+            }
+            li:nth-child(2) {
+                display: block;
+                font-size: 30px;
+                padding: 8px 12px;
+                opacity: 0;
+
+                transition-property: opacity;
+                transition-duration: 1s;
+                transition-delay: 2s;
+            }
+
+            li:nth-child(3) {
+                display: block;
+                padding: 20px;
+                opacity: 0;
+
+                transition-property: opacity;
+                transition-duration: 1s;
+                transition-delay: 2s;
+
+                button {
+                    font-weight: bold;
+                    font-size: 15px;
+                    position: absolute;
+                    width: 20%;
+                    height: 20%;
+                    background-color: rgba(0, 0, 0, 0);
+                    border: solid;
+                    border-radius: 30px;
+                    color: white;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    #main {
+        .main__content {
+            ul {
+                li:nth-child(1) span {
+                    display: flex;
+                }
+            }
+        }
+    }
+}

@@ -38,6 +38,7 @@ const config: webpack.Configuration = {
         extensions: ['.ts', '.tsx', '.js', '.json'],
         alias: {
             '@app': path.resolve(__dirname, '..', 'src'),
+            '@assets': path.resolve(__dirname, '..', 'assets'),
             '@utils': path.resolve(__dirname, '..', 'src/utils')
         }
     },

@@ -19,7 +19,7 @@ import {
 
 // ====================== CSS
 export const configUpdateCSS = {
-    updateComponentBgColor: (bgColor: string) => action(
+    updatecomponentTemaColor: (bgColor: string) => action(
         CONFIG_UPDATE_CSS_COMPONENT_BG_COLOR,
         bgColor
     ),
