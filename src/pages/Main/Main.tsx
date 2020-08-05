@@ -140,7 +140,7 @@ export default class Main extends React.Component<MainPropsInterface, MainStateI
 
     // Go to Detail component
     setTimeout(() => {
-      history.push('/detail');
+      history.push('/content');
     }, 1500);
   }
 
