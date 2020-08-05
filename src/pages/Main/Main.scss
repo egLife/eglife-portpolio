@@ -7,34 +7,40 @@
     position: absolute;
 
     transition-property: height, top;
-    transition-duration: 2s;
+    transition-duration: 1.5s;
 
     .main__backgroundImage {
         position: absolute;
         width: 100%;
-        height: 100%;    
+        height: 100%;
+        min-height: 800px;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
 
         transition-property: filter;
         transition-duration: 1s;
+        background-attachment: scroll;
 
         filter: brightness(1);
     }
 
     .main__content {
-        top: 50%;
+        top: 500px;
         margin: 0 auto;
         position: relative;
         opacity: 1;
         width: 80%;
-        height: 30%;
+        height: 282px;
         color: white;
         transition-property: opacity;
-        transition-duration: 1s;
+        transition-duration: 0.5s;
 
         ul {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
             list-style: none;
             letter-spacing: -0.035em;
 
@@ -57,24 +63,24 @@
 
                 transition-property: opacity;
                 transition-duration: 1s;
-                transition-delay: 2s;
+                transition-delay: 1s;
             }
 
             li:nth-child(3) {
                 display: block;
-                padding: 20px;
+                padding: 20px 12px;
                 opacity: 0;
 
                 transition-property: opacity;
                 transition-duration: 1s;
-                transition-delay: 2s;
+                transition-delay: 1s;
 
                 button {
+                    width: 300px;
                     font-weight: bold;
                     font-size: 15px;
                     position: absolute;
-                    width: 20%;
-                    height: 20%;
+                    height: 75px;
                     background-color: rgba(0, 0, 0, 0);
                     border: solid;
                     border-radius: 30px;
@@ -85,13 +91,44 @@
         }
     }
 }
-
+// screen on window
 @media screen and (max-width: 1400px) {
     #main {
         .main__content {
             ul {
                 li:nth-child(1) span {
                     display: flex;
+                }
+            }
+        }
+    }
+}
+
+// mobile
+@media screen and (max-width: 590px) {
+    #main {
+        .main__content {
+            width: 100%;
+            top: 300px;
+            text-align: center;
+            ul {
+                li:nth-child(1) {
+                    font-size: 25px;
+                    span {
+                        display: block;
+                    }
+                    padding-bottom: 10px;
+                }
+                li:nth-child(2) {
+                    font-size: 20px;
+                }
+                li:nth-child(3) {
+                    width: 40%;
+                    button {
+                        left: 30%;
+                        font-size: 10px;
+                        width: 40%;
+                    }
                 }
             }
         }

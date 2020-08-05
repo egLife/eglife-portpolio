@@ -50,7 +50,7 @@ export default class Main extends React.Component<MainPropsInterface, MainStateI
       this.setState({
         text: this.state.text.concat(lang.MAIN.TITLE[this.state.text.length])
       });
-    }, 100);
+    }, 50);
   }
 
   componentDidUpdate() {
@@ -60,7 +60,7 @@ export default class Main extends React.Component<MainPropsInterface, MainStateI
         this.setState({
           text: this.state.text.concat(lang.MAIN.TITLE[this.state.text.length])
         });
-      }, 100);
+      }, 50);
     }
   }
 
@@ -75,7 +75,7 @@ export default class Main extends React.Component<MainPropsInterface, MainStateI
         {
           // background image for main component
         }
-        <img className='main__backgroundImage' ref={this.mainImageRef}
+        <div className='main__backgroundImage' ref={this.mainImageRef}
           style={{
             backgroundImage: `url('${Background}')`
           }}
@@ -134,13 +134,14 @@ export default class Main extends React.Component<MainPropsInterface, MainStateI
    */
   showDetail() {
     this.mainRef.current.style.height = '0';
+    this.mainImageRef.current.style.minHeight = '0';
     this.mainRef.current.style.top = '50%';
     this.mainContentRef.current.style.opacity = '0';
 
     // Go to Detail component
     setTimeout(() => {
       history.push('/detail');
-    }, 2000);
+    }, 1500);
   }
 
   /**

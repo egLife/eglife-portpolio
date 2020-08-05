@@ -22,7 +22,9 @@ export default class App extends React.Component<AppPropsInterface, AppStatesInt
 
     render() {
         return (
-            <div id='app'>
+            <div id='app' style={{
+                backgroundColor: this.props.temaColor
+            }}>
                 <Switch>
                     <Route
                         path='/'
