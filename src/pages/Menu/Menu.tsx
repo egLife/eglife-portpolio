@@ -46,9 +46,17 @@ const Menu = (props: MenuContainerProps) => {
             }, 100);
         }
         // Start Animation
-        if (refDivObject.ref_introduce.current.style.opacity === '0' ||
+        if (current_page_name === '' &&
             refDivObject.ref_introduce.current.style.opacity === '') {
                 startAnimation();
+        } else if (current_page_name === '' &&
+            refDivObject.ref_introduce.current.style.opacity === '0') {
+                const refObjectKeys: Array<string> = Object.keys(refDivObject);
+                refObjectKeys.map((key: MenuStateType['refType']) => {
+                    refDivObject[key].current.style.opacity = '1';
+                });
+
+                ref_goBackButton.current.style.opacity = '1';
         }
     });
 
@@ -90,15 +98,15 @@ const Menu = (props: MenuContainerProps) => {
                 ?
                     current_page_name === 'ref_introduce'
                     ?
-                        <Introduce />
+                        <Introduce closeComponent={closeComponent}/>
                     : current_page_name === 'ref_skill'
                     ?
-                        <Introduce />
+                        <Introduce closeComponent={closeComponent}/>
                     : current_page_name === 'ref_project'
                     ?
-                        <Introduce />
+                        <Introduce closeComponent={closeComponent}/>
                     :
-                        <Introduce />
+                        <Introduce closeComponent={closeComponent}/>
                 :
                     <>
                     </>
@@ -117,6 +125,12 @@ const Menu = (props: MenuContainerProps) => {
             case 'ref_project':
             case 'ref_question':
                 changePageName(dataName);
+                const refObjectKeys: Array<string> = Object.keys(refDivObject);
+                refObjectKeys.map((key: MenuStateType['refType']) => {
+                    refDivObject[key].current.style.opacity = '0';
+                });
+
+                ref_goBackButton.current.style.opacity = '0';
                 break;
             default: break;
         }
@@ -156,6 +170,10 @@ const Menu = (props: MenuContainerProps) => {
                 }, 1300);
             }, 500);
         }
+    }
+
+    function closeComponent() {
+        changePageName('');
     }
 };
 

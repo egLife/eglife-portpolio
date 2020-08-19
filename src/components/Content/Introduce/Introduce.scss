@@ -1,8 +1,12 @@
 #Content__Introduce {
-    width: 39%;
-    height: 80%;
-    min-height: 700px;
-    top: 10%;
-    left: 10%;
+    width: 0%;
+    height: 0%;
+    // min-height: 700px;
+    top: 50%;
+    z-index: 101;
+    left: 50%;
     position: absolute;
+    background-color: #ffa500;
+    transition-property: left, top, height, width;
+    transition-duration: 1s;
 }
