@@ -7,7 +7,7 @@ type ProjectStateType = {};
 
 const Project = (props: ProjectPropsType) => {
     return (
-        <div id='Projects'></div>
+        <div id='Content__Project' className='Content__background'></div>
     );
 };
 

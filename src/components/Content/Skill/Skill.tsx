@@ -5,10 +5,9 @@ import './Skill.scss';
 type SkillPropsType = {};
 type SkillStateType = {};
 
-
 const Skill = (props: SkillPropsType) => {
     return (
-        <div id='Skills'></div>
+        <div id='Content__Skill' className='Content__background'></div>
     );
 };
 

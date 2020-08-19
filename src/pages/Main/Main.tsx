@@ -21,7 +21,8 @@ export default class Main extends React.Component<MainPropsInterface, MainStateI
   private mainRef: React.RefObject<HTMLDivElement> = React.createRef();
   private mainContentRef: React.RefObject<HTMLDivElement> = React.createRef();
   private mainImageRef: React.RefObject<HTMLImageElement> = React.createRef();
-  private mainliRefArray: Array<any> = [];
+  private mainLiLogoRef: React.RefObject<HTMLLIElement> = React.createRef();
+  private mainLiButtonRef: React.RefObject<HTMLLIElement> = React.createRef();
   private mainButtonRef: React.RefObject<HTMLButtonElement> = React.createRef();
   private typingTimer: NodeJS.Timer | number = null;
 
@@ -41,11 +42,8 @@ export default class Main extends React.Component<MainPropsInterface, MainStateI
     setTimeout(() => {
       // Start animation
       this.mainImageRef.current.style.filter = 'brightness(0.4)';
-      this.mainliRefArray.map((mainliRef) => {
-        if (mainliRef.style.opacity = '0') {
-          mainliRef.style.opacity = '1';
-        }
-      });
+      this.mainLiLogoRef.current.style.opacity = '1';
+      this.mainLiButtonRef.current.style.opacity = '1';
 
       this.setState({
         text: this.state.text.concat(lang.MAIN.TITLE[this.state.text.length])
@@ -53,13 +51,18 @@ export default class Main extends React.Component<MainPropsInterface, MainStateI
     }, 50);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(nextProps: any, nextState: any) {
     // Input title to this.state.text variable
-    if (this.state.text !== lang.MAIN.TITLE) {
+    if (nextState.text !== lang.MAIN.TITLE && nextState.text.length < lang.MAIN.TITLE.length) {
       this.typingTimer = setTimeout(() => {
-        this.setState({
-          text: this.state.text.concat(lang.MAIN.TITLE[this.state.text.length])
-        });
+        if (lang.MAIN.TITLE[this.state.text.length] === undefined) {
+          clearTimeout(this.typingTimer as NodeJS.Timer);
+          this.typingTimer = null;
+        } else {
+          this.setState({
+            text: this.state.text.concat(lang.MAIN.TITLE[this.state.text.length])
+          });
+        }
       }, 50);
     }
   }
@@ -101,17 +104,13 @@ export default class Main extends React.Component<MainPropsInterface, MainStateI
               {
                 // sub title span tag
               }
-              <li ref={(ref) => {
-                this.mainliRefArray = this.mainliRefArray.concat(ref);
-              }}><span style={{
+              <li ref={this.mainLiLogoRef}><span style={{
                   color: this.props.temaColor
                 }}>{lang.MAIN.SUB_TITLE}</span></li>
               {
                 // Create button tag
               }
-              <li ref={(ref) => {
-                this.mainliRefArray = this.mainliRefArray.concat(ref);
-              }}>
+              <li ref={this.mainLiButtonRef}>
                 <button
                   ref={this.mainButtonRef}
                   onMouseEnter={this.handleMouseEnter}
@@ -133,14 +132,15 @@ export default class Main extends React.Component<MainPropsInterface, MainStateI
    * Change height, top for animation
    */
   showDetail() {
-    this.mainRef.current.style.height = '0';
+    this.mainRef.current.style.overflow = 'hidden';
     this.mainImageRef.current.style.minHeight = '0';
+    this.mainRef.current.style.height = '0';
     this.mainRef.current.style.top = '50%';
     this.mainContentRef.current.style.opacity = '0';
 
     // Go to Detail component
     setTimeout(() => {
-      history.push('/content');
+      history.push('/menu');
     }, 1500);
   }
 

@@ -7,7 +7,7 @@ type QuesitonStateType = {};
 
 const Quesiton = (props: QuesitonPropsType) => {
     return (
-        <div id='Quesitons'></div>
+        <div id='Content__Question' className='Content__background'></div>
     );
 };
 

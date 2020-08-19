@@ -7,7 +7,7 @@ type IntroduceStateType = {};
 
 const Introduce = (props: IntroducePropsType) => {
     return (
-        <div id='Introduces'></div>
+        <div id='Content__Introduce' className='Content__background'></div>
     );
 };
 
