@@ -1,8 +1,11 @@
 #Content__Question {
-    width: 89%;
-    height: 80%;
-    min-height: 700px;
-    top: 10%;
-    left: 210%;
+    width: 0%;
+    height: 0%;
+    top: 50%;
+    z-index: 101;
+    left: 50%;
     position: absolute;
+    background-color: #ffa500;
+    transition-property: left, top, height, width;
+    transition-duration: 1s;
 }

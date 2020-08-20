@@ -49,6 +49,7 @@ const Menu = (props: MenuContainerProps) => {
         if (current_page_name === '' &&
             refDivObject.ref_introduce.current.style.opacity === '') {
                 startAnimation();
+        // Fade out for show detail component
         } else if (current_page_name === '' &&
             refDivObject.ref_introduce.current.style.opacity === '0') {
                 const refObjectKeys: Array<string> = Object.keys(refDivObject);
@@ -93,24 +94,10 @@ const Menu = (props: MenuContainerProps) => {
                     ref={refDivObject.ref_question}
                     onClick={clickMenu}>CONTACT</div>
             </div>
-            {
-                current_page_name !== ''
-                ?
-                    current_page_name === 'ref_introduce'
-                    ?
-                        <Introduce closeComponent={closeComponent}/>
-                    : current_page_name === 'ref_skill'
-                    ?
-                        <Introduce closeComponent={closeComponent}/>
-                    : current_page_name === 'ref_project'
-                    ?
-                        <Introduce closeComponent={closeComponent}/>
-                    :
-                        <Introduce closeComponent={closeComponent}/>
-                :
-                    <>
-                    </>
-            }
+            <Introduce closeComponent={closeComponent} currentPageName={current_page_name}/>
+            <Skill closeComponent={closeComponent} currentPageName={current_page_name}/>
+            <Project closeComponent={closeComponent} currentPageName={current_page_name}/>
+            <Question closeComponent={closeComponent} currentPageName={current_page_name}/>
         </div>
     );
 

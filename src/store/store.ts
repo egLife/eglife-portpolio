@@ -1,9 +1,9 @@
 import { createStore } from 'redux';
-import { createHashHistory } from 'history';
+import { createBrowserHistory } from 'history';
 
 import rootReducer from './root-reducer';
 
-export const history = createHashHistory();
+export const history = createBrowserHistory();
 
 const store = createStore(
     rootReducer(history)
