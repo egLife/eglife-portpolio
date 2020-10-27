@@ -31,7 +31,7 @@
         height: 20%;
         color: black;
         transition-property: opacity;
-        transition-duration: 0.7s;
+        transition-duration: 0.3s;
         text-align: center;
 
         button {
@@ -43,12 +43,12 @@
             width: 701px;
             height: 80px;
             transition-property: color;
-            transition-duration: 0.7s;
+            transition-duration: 0.3s;
             background-color: rgba(255, 255, 255, 0.6);
 
             svg {
                 transition-property: transform;
-                transition-duration: 0.7s;
+                transition-duration: 0.3s;
             }
 
             &:hover {
@@ -83,7 +83,7 @@
             left: 0;
             background-color: rgba(255,255,255, 0.6);
             transition-property: opacity, position, left, top, height, width, color;
-            transition-duration: 0.7s;
+            transition-duration: 0.3s;
             opacity: 0;
             z-index: 10;
             &:hover {

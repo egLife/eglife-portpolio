@@ -1,0 +1,19 @@
+#Content__Main {
+    width: 0%;
+    height: 0%;
+    top: 50%;
+    z-index: 101;
+    left: 50%;
+    position: absolute;
+    transition-property: left, top, height, width;
+    transition-duration: 0.5s;
+
+    .Content__Main__Background {
+        width: 100%;
+        height: 100%;
+        background-color: #ffa500;
+        transition-property: opacity;
+        transition-duration: 0.5s;
+        opacity: 1;
+    }
+}
