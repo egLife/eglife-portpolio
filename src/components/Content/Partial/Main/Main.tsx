@@ -15,6 +15,7 @@ type MainStateType = {};
 const Main = (props: MainPropsType) => {
     const ref_partial_main: React.RefObject<HTMLDivElement> = React.createRef();
     const ref_partial_main__background: React.RefObject<HTMLDivElement> = React.createRef();
+    const ref_partial_main__body: React.RefObject<HTMLDivElement> = React.createRef();
     useEffect(() => {
         if (ref_partial_main.current.style.width === '' ||
             ref_partial_main.current.style.width === '0%') {
@@ -24,6 +25,7 @@ const Main = (props: MainPropsType) => {
                 ref_partial_main.current.style.left =  '0';
                 setTimeout(() => {
                     ref_partial_main__background.current.style.opacity = '0.2';
+                    ref_partial_main__body.current.style.opacity = '1';
                 }, 500);
         }
     });
@@ -31,8 +33,10 @@ const Main = (props: MainPropsType) => {
     return (
         <div id='Content__Main' ref={ref_partial_main}>
             <div className='Content__Main__Background' ref={ref_partial_main__background}/>
-            <Partial__Title title={props.title} />
-            <Partial__Content contentdData={props.contentData} />
+            <div className='Content__Main__Body' ref={ref_partial_main__body}>
+                <Partial__Title title={props.title} />
+                <Partial__Content contentdData={props.contentData} />
+            </div>
         </div>
     );
 };

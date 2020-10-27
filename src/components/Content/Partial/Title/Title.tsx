@@ -14,6 +14,7 @@ const Title = (props: TitlePropsType) => {
 
     return (
         <div id='Content__Main__Title'>
+            {props.title}
         </div>
     );
 };
