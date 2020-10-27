@@ -9,16 +9,21 @@
     transition-duration: 0.5s;
 
     .Content__Main__Body {
-        width: 100%;
-        height: 100%;
-        position: absolute;
+        // z-index: 101;
+        width: 800px;
+        height: 800px;
+        position: relative;
+        top: 7%;
+        margin: 0 auto;
         transition-property: opacity;
-        transition-duration: 0.5s;
-        transition-delay: 0.5s;
+        transition-duration: 0.7s;
+        // transition-delay: 0.s;
+        display: none;
         opacity: 0;
     }
 
     .Content__Main__Background {
+        // z-index: 102;
         width: 100%;
         height: 100%;
         background-color: #ffa500;
