@@ -1,11 +1,58 @@
-// #Content__Introduce {
-//     width: 0%;
-//     height: 0%;
-//     top: 50%;
-//     z-index: 101;
-//     left: 50%;
-//     position: absolute;
-//     background-color: #ffa500;
-//     transition-property: left, top, height, width;
-//     transition-duration: 1s;
-// }
+.Content__Introduce__Main {
+    width: 1000px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+
+    .Content__Introduce__MySelf {
+        width: 100%;
+        height: 50%;
+        position: relative;
+        margin: 0 auto;
+
+        .Content__Introduce__Picture {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            float: left;
+            // background-color: red;
+
+            img {
+                margin-top: 7%;
+                margin-left: 30%;
+                position: relative;
+                width: 60%;
+                height: 80%;
+            }
+        }
+    
+        .Content__Introduce__Text {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            float: left;
+            // background-color: blue;
+            text-align: left;
+            margin-top:20px;
+
+            p:nth-of-type(2) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+
+    .Content__Introduce__Characteristic {
+        width: 100%;
+        height: 50%;
+        position: relative;
+        margin: 0 auto;
+        background-color: black;
+
+        .Content__Introduce__Characteristic__wrap {
+            width: 25%;
+            height: 100%;
+            position: relative;
+            float: left;
+        }
+    }
+}

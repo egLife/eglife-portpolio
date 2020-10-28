@@ -16,7 +16,7 @@ const Skill = (props: SkillPropsType) => {
     if (props.currentPageName === 'ref_skill') {
         return (
             <div id='Content__Skill'>
-                <Partial_Main closeComponent={props.closeComponent} title='Skill' contentData='t' />
+                <Partial_Main closeComponent={props.closeComponent} title='SKILL' contentData='t' />
             </div>
         );
     } else {

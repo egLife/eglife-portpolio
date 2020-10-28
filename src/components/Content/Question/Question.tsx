@@ -16,7 +16,7 @@ const Question = (props: QuestionPropsType) => {
     if (props.currentPageName === 'ref_question') {
         return (
             <div id='Content__Question'>
-                <Partial_Main closeComponent={props.closeComponent} title='Question' contentData='t' />
+                <Partial_Main closeComponent={props.closeComponent} title='CONTACT' contentData='t' />
             </div>
         );
     } else {

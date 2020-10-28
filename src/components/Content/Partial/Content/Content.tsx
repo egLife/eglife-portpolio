@@ -14,6 +14,7 @@ const Content = (props: ContentPropsType) => {
 
     return (
         <div id='Content__Main__Content'>
+            {props.contentdData}
         </div>
     );
 };

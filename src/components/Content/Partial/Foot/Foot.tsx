@@ -15,11 +15,14 @@ const Foot = (props: FootPropsType) => {
     });
 
     return (
-        <button id='Content__Main__Foot' onClick={() => {
-            props.closeComponent();
-        }}>
-            <FontAwesomeIcon icon={faTimes}/>
-        </button>
+        <div id='Content__Main__Foot'>
+            <button onClick={() => {
+                props.closeComponent();
+            }}>
+                <FontAwesomeIcon icon={faTimes}/>
+            </button>
+        </div>
+
     );
 };
 

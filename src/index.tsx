@@ -10,6 +10,9 @@ import App from './pages';
 // STORE
 import store, { history } from '@app/store';
 
+// SCSS
+import './style/hexagon.scss';
+
 // Render React components.
 ReactDOM.render(
     (

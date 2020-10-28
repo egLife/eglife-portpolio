@@ -24,7 +24,7 @@ const Main = (props: MainPropsType) => {
                 ref_partial_main.current.style.height =  '100%';
                 ref_partial_main.current.style.top =  '0';
                 ref_partial_main.current.style.left =  '0';
-                ref_partial_main__background.current.style.opacity = '0.2';
+                ref_partial_main__background.current.style.opacity = '0.1';
                 setTimeout(() => {
                     ref_partial_main__body.current.style.display = 'block';
                     setTimeout(() => {
