@@ -1,4 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTachometerAlt } from '@fortawesome/free-solid-svg-icons/faTachometerAlt';
+import { faEquals } from '@fortawesome/free-solid-svg-icons/faEquals';
+import { faCogs } from '@fortawesome/free-solid-svg-icons/faCogs';
+import { faHourglass } from '@fortawesome/free-solid-svg-icons/faHourglass';
 
 import Partial_Main from '../Partial/Main';
 
@@ -41,16 +46,36 @@ const Introduce = (props: IntroducePropsType) => {
                 </div>
                 <div className='Content__Introduce__Characteristic'>
                     <div className='Content__Introduce__Characteristic__wrap'>
-                        <div className='hexagon'></div>
+                        <div className='characteristic__wrap'>
+                            <div className='hexagon'>
+                                <FontAwesomeIcon icon={faTachometerAlt}/>
+                            </div>
+                            <div className='label-bold'>Fast</div>
+                            <div>맡은 기간 내에 일을 끝내는 빠른 작업 속도</div>
+                        </div>
+                        <div className='characteristic__wrap'>
+                            <div className='hexagon'>
+                                <FontAwesomeIcon icon={faEquals}/>
+                            </div>
+                            <div className='label-bold'>Accuracy</div>
+                            <div>빠른 작업속도에 걸맞는 정확성</div>
+                        </div>
                     </div>
                     <div className='Content__Introduce__Characteristic__wrap'>
-                        <div className='hexagon'></div>
-                    </div>
-                    <div className='Content__Introduce__Characteristic__wrap'>
-                        <div className='hexagon'></div>
-                    </div>
-                    <div className='Content__Introduce__Characteristic__wrap'>
-                        <div className='hexagon'></div>
+                        <div className='characteristic__wrap'>
+                            <div className='hexagon'>
+                                <FontAwesomeIcon icon={faCogs}/>
+                            </div>
+                            <div className='label-bold'>Sincerity</div>
+                            <div>맡은 일은 끝까지 성실하게 임하는 성실함</div>
+                        </div>
+                        <div className='characteristic__wrap'>
+                            <div className='hexagon'>
+                                <FontAwesomeIcon icon={faHourglass}/>
+                            </div>
+                            <div className='label-bold'>Responsibility</div>
+                            <div>맡은 일은 무슨 일이 있어도 완벽하게 처리하는 책임감</div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -11,3 +11,10 @@
     text-align: center;
     border-radius: 50px 0px 0px 0px;
 }
+
+// screen on window
+@media screen and (max-width: 1000px) {
+    #Content__Main__Title {
+        width: 100%;
+    }
+}
