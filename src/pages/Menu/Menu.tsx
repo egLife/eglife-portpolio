@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons/faArrowRight';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 
 // IMAGE
 import Background from '@assets/images/menu_background.jpeg';
@@ -73,25 +73,33 @@ const Menu = (props: MenuContainerProps) => {
                 <button onClick={() => {
                     history.push('/');
                 }}>
-                    <FontAwesomeIcon icon={faArrowRight}/>
+                    <FontAwesomeIcon icon={faArrowLeft}/>
                 </button>
             </div>
             <div className='Menu_content'>
                 <div className='Menu_style'
                     data-name='ref_introduce'
                     ref={refDivObject.ref_introduce}
+                    onMouseEnter={toggleHover}
+                    onMouseLeave={toggleHover}
                     onClick={clickMenu}>ABOUT</div>
                 <div className='Menu_style'
                     data-name='ref_skill'
                     ref={refDivObject.ref_skill}
+                    onMouseEnter={toggleHover}
+                    onMouseLeave={toggleHover}
                     onClick={clickMenu}>SKILL</div>
                 <div className='Menu_style'
                     data-name='ref_project'
                     ref={refDivObject.ref_project}
+                    onMouseEnter={toggleHover}
+                    onMouseLeave={toggleHover}
                     onClick={clickMenu}>PROJECTS</div>
                 <div className='Menu_style'
                     data-name='ref_question'
                     ref={refDivObject.ref_question}
+                    onMouseEnter={toggleHover}
+                    onMouseLeave={toggleHover}
                     onClick={clickMenu}>CONTACT</div>
             </div>
             <Introduce closeComponent={closeComponent} currentPageName={current_page_name}/>
@@ -102,8 +110,6 @@ const Menu = (props: MenuContainerProps) => {
     );
 
     function clickMenu(e: React.MouseEvent) {
-        console.log(e.currentTarget.getAttribute('data-name'));
-
         const dataName: MenuStateType['refType'] | string = e.currentTarget.getAttribute('data-name');
 
         switch (dataName) {
@@ -136,26 +142,38 @@ const Menu = (props: MenuContainerProps) => {
 
                 setTimeout(() => {
                     refObjectKeys.map((key: MenuStateType['refType']) => {
-                        if (key !== 'ref_introduce') {
+                        if (key !== 'ref_introduce' && refDivObject[key].current !== null) {
                             refDivObject[key].current.style.left = '50.6%';
                         }
                     });
                 }, 300);
                 setTimeout(() => {
                     refObjectKeys.map((key: MenuStateType['refType']) => {
-                        if (key !== 'ref_introduce' && key !== 'ref_skill') {
+                        if (key !== 'ref_introduce' && key !== 'ref_skill' &&
+                            refDivObject[key].current !== null
+                        ) {
                             refDivObject[key].current.style.top = '50.5%';
                         }
                     });
                 }, 800);
                 setTimeout(() => {
                     refObjectKeys.map((key: MenuStateType['refType']) => {
-                        if (key === 'ref_project') {
+                        if (key === 'ref_project' && refDivObject[key].current !== null) {
                             refDivObject[key].current.style.left = '0%';
                         }
                     });
                 }, 1300);
             }, 500);
+        }
+    }
+
+    function toggleHover(data: any) {
+        if (data.currentTarget.style.color === 'white') {
+            data.currentTarget.style.backgroundColor = 'rgba(255,255,255, 0.6)';
+            data.currentTarget.style.color =  'black';
+        } else {
+            data.currentTarget.style.backgroundColor = 'rgba(4, 194, 201, 0.6)';
+            data.currentTarget.style.color =  'white';
         }
     }
 

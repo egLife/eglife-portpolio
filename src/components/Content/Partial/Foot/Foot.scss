@@ -15,13 +15,23 @@
         line-height: 80px;
         font-size: 30px;
         cursor: pointer;
+        border: 0;
+        outline: 0;
 
-        transition-property: color;
+        transition-property: background-color;
         transition-duration: 0.3s;
+
+        svg {
+            transition-property: color, transform;
+            transition-duration: 0.3s;
+        }
 
         &:hover {
             background-color: #04c2c9;
-            // color: white;
+            svg {
+                color: white;
+                transform: rotate(90deg);
+            }
         }
     }
 }
@@ -30,6 +40,6 @@
 // screen on window
 @media screen and (max-width: 1000px) {
     #Content__Main__Foot {
-        width: 100%;
+        width: 80%;
     }
 }

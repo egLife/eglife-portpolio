@@ -1,11 +1,60 @@
-// #Content__Project {
-//     width: 0%;
-//     height: 0%;
-//     top: 50%;
-//     z-index: 101;
-//     left: 50%;
-//     position: absolute;
-//     background-color: #04c2c9;
-//     transition-property: left, top, height, width;
-//     transition-duration: 0.5s;
-// }
+.Content__Project__Main {
+    width: 1000px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1000px) {
+    #Content__Project {
+        #Content__Main__Content {
+            height: 945px;
+            .Content__Project__Main  {
+                width: 700px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #Content__Project {
+        #Content__Main__Content {
+            height: 625px;
+            .Content__Project__Main  {
+                width: 500px;
+                #gallery {
+                    .card {
+                        .card_bg {
+                            width: 220px;
+                            height: 200px;
+                        }
+                    }
+                    .text {
+                        .bold {
+                            font-size: 12pt;
+                        }
+                        .highlight {
+                            font-size: 8pt;
+                        }
+                    }
+
+                    .button {
+                        width: 120px;
+                        font-size: 8pt;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #Content__Project {
+        #Content__Main__Content {
+            height: 1030px;
+            .Content__Project__Main  {
+                width: 250px;
+            }
+        }
+    }
+}

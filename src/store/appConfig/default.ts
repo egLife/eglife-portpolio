@@ -4,7 +4,7 @@ import {
 } from './models';
 
 export const defaultCSSState: ConfigCSSDefaultType = {
-    componentTemaColor: '#04c2c9',
+    componentTemaColor: '#ffa500',
     componentTextColor: 'black',
     componentTitleColor: 'red'
 };

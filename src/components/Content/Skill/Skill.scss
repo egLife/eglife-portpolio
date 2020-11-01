@@ -29,9 +29,9 @@
             height: 30pt;
             left: 0;
             width: 0%;
-            transition-property: width;
-            transition-duration: 1s;
-            transtion-delay: 5s;
+            // transition-property: width;
+            // transition-duration: 1s;
+            // transition-delay: 5s;
 
             .tag-bold {
                 background-color: #04c2c9;
@@ -54,6 +54,16 @@
             right: 6%;
             font-size: 13pt;
             align-items: flex-end;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #Content__Skill {
+        #Content__Main__Content {
+            .Content__Skill__Main {
+                width: 100%;
+            }
         }
     }
 }

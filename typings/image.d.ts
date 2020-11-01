@@ -15,6 +15,11 @@ declare module '*.png' {
     export = fileName;
 }
 
+declare module '*.PNG' {
+    const fileName: string;
+    export = fileName;
+}
+
 declare module '*.gif' {
     const fileName: string;
     export = fileName;

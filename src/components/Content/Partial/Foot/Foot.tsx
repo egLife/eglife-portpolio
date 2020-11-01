@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft';
 
 import './Foot.scss';
 
@@ -15,7 +15,7 @@ const Foot = (props: FootPropsType) => {
             <button onClick={() => {
                 props.closeComponent();
             }}>
-                <FontAwesomeIcon icon={faTimes}/>
+                <FontAwesomeIcon icon={faArrowLeft}/>
             </button>
         </div>
 

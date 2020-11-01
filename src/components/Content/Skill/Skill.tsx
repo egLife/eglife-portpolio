@@ -47,12 +47,11 @@ const Skill = (props: SkillPropsType) => {
         }];
 
     useEffect(() => {
-        console.log(skill_bar_data[skill_bar_data.length - 1]);
         if (skill_bar_data[skill_bar_data.length - 1].ref_bar_fill.current !== null) {
-            console.log('tttt');
             skill_bar_data.map((bar_data, index) => {
-                console.log(bar_data.ref_bar_fill.current.style.animation);
-                bar_data.ref_bar_fill.current.style.width = bar_data.percentage;
+                setTimeout(() => {
+                    bar_data.ref_bar_fill.current.style.width = bar_data.percentage;
+                }, 1000);
             });
         }
     });
@@ -76,11 +75,11 @@ const Skill = (props: SkillPropsType) => {
                             <div className='bar__flex' key={bar_data.tag}>
                                 <div className='bar__fill'
                                     ref={bar_data.ref_bar_fill}
-                                    // style={{
-                                    //     transitionProperty: 'width',
-                                    //     transitionDuration: '0.2s',
-                                    //     transitionDelay: `5.${index}s`
-                                    // }}
+                                    style={{
+                                        transitionProperty: 'width',
+                                        transitionDuration: `1.${index}s`,
+                                        transitionDelay: '0.2s'
+                                    }}
                                 >
                                     <div className='tag-bold'>{bar_data.tag}</div>
                                 </div>
