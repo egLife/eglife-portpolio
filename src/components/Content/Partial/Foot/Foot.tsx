@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons/faTimes';
 
@@ -10,10 +10,6 @@ type FootPropsType = {
 type FootStateType = {};
 
 const Foot = (props: FootPropsType) => {
-    // const ref_partial_main: React.RefObject<HTMLDivElement> = React.createRef();
-    useEffect(() => {
-    });
-
     return (
         <div id='Content__Main__Foot'>
             <button onClick={() => {

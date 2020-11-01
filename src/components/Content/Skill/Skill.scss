@@ -1,11 +1,59 @@
-// #Content__Skill {
-//     width: 0%;
-//     height: 0%;
-//     top: 50%;
-//     z-index: 101;
-//     left: 50%;
-//     position: absolute;
-//     background-color: #04c2c9;
-//     transition-property: left, top, height, width;
-//     transition-duration: 1s;
-// }
+.Content__Skill__Main {
+    width: 1000px;
+    top: 16%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+
+    .bar__flex {
+        width: 90%;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #b7b7b7;
+        color: #666;
+        font-size: 11pt;
+        height: 40px;
+        margin: 0 auto;
+        margin-bottom: 25px;
+        text-align: center;
+
+        .bar__fill {
+            left: 0;
+            align-items: flex-start;
+            top: 0;
+            background-color: #00a1a7;
+            opacity: 1;
+            padding: 0;
+            height: 30pt;
+            left: 0;
+            width: 0%;
+            transition-property: width;
+            transition-duration: 1s;
+            transtion-delay: 5s;
+
+            .tag-bold {
+                background-color: #04c2c9;
+                color: #fff;
+                left: 0;
+                position: relative;
+                top: 0;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100px;
+                height: 100%;
+                font-weight: 500;
+            }
+        }
+
+        span {
+            position: absolute;
+            right: 6%;
+            font-size: 13pt;
+            align-items: flex-end;
+        }
+    }
+}

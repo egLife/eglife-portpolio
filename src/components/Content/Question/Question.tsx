@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import Partial_Main from '../Partial/Main';
 
@@ -11,8 +11,6 @@ type QuestionPropsType = {
 type QuestionStateType = {};
 
 const Question = (props: QuestionPropsType) => {
-    const ref_question: React.RefObject<HTMLDivElement> = React.createRef();
-
     if (props.currentPageName === 'ref_question') {
         return (
             <div id='Content__Question'>

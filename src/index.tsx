@@ -13,6 +13,7 @@ import store, { history } from '@app/store';
 // SCSS
 import './style/hexagon.scss';
 import './style/fontStyle.scss';
+import './style/animation.scss';
 
 // Render React components.
 ReactDOM.render(

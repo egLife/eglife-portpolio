@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import Partial_Main from '../Partial/Main';
 
@@ -11,8 +11,6 @@ type ProjectPropsType = {
 type ProjectStateType = {};
 
 const Project = (props: ProjectPropsType) => {
-    const ref_project: React.RefObject<HTMLDivElement> = React.createRef();
-
     if (props.currentPageName === 'ref_project') {
         return (
             <div id='Content__Project'>
