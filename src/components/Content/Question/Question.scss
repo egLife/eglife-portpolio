@@ -49,7 +49,7 @@
             animation: popIn 1s both;
             animation-delay: 0.5s;
             .whether_success_fail {
-                width: 55%;
+                width: 100%;
                 position: absolute;
                 height: 0px;
                 overflow: hidden;
@@ -191,7 +191,7 @@
             .question_email {
                 .whether_success_fail {
                     p {
-                        font-size: 9pt;
+                        font-size: 8pt;
                     }
                 }
             }

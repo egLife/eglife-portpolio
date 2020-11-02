@@ -131,7 +131,6 @@ const Gallery = (props: GalleryPropsType) => {
         }];
 
     useEffect(() => {
-        console.log(ref_popUp.current);
         if (ref_popUp.current !== null) {
             ref_popUp.current.style.opacity = '1';
             ref_popUp.current.style.transform = 'scale(1)';

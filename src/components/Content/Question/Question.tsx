@@ -26,6 +26,7 @@ type QuestionStateType = {
 };
 
 const Question = (props: QuestionPropsType) => {
+    let email_send_button_status: boolean = false;
     const my_email: QuestionStateType['my_email'] = 'tlsdmsrb0427@naver.com';
     const my_kakao: QuestionStateType['my_kakao'] = 'tlsdmsrb0427';
     const my_phone_number: QuestionStateType['my_phone_number'] = '+82 10 5622 1191';
@@ -51,7 +52,7 @@ const Question = (props: QuestionPropsType) => {
                         <input className='input_contact_data' placeholder='Name' type='text' name='user_name' required/>
                         <input className='input_contact_data' placeholder='Enter Email' type='email' name='user_email' required/>
                         <textarea placeholder='Your Message' name='message' />
-                        <input className='submit_contact_data' type='submit' value='Send' />
+                        <input className='submit_contact_data' type='submit' value='Send' disabled={email_send_button_status} />
                         <div className='whether_success_fail'
                             ref={ref_whether_success_fail}>
                             <p>
@@ -94,17 +95,19 @@ const Question = (props: QuestionPropsType) => {
     function sendEmail(e: any) {
         e.preventDefault();
 
-        console.log(e.target);
+        email_send_button_status = true;
 
         emailjs.sendForm(email.service_id, email.template_id, e.target, email.user_id)
         .then((result: any) => {
             ref_whether_success_fail.current.style.backgroundColor = 'green';
             ref_whether_success_fail.current.style.height = '50px';
             change_whether_success_fail(true);
+            email_send_button_status = false;
         }, (error: any) => {
             ref_whether_success_fail.current.style.backgroundColor = 'red';
             ref_whether_success_fail.current.style.height = '50px';
             change_whether_success_fail(false);
+            email_send_button_status = false;
         });
     }
 
