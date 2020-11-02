@@ -23,6 +23,7 @@ type MenuStateType = {
 
 const Menu = (props: MenuContainerProps) => {
     const [current_page_name, changePageName] = useState('');
+    const [disabled_button, change_disabled_button] = useState(true);
     const ref_background: React.RefObject<HTMLDivElement> = React.createRef();
     const ref_goBackButton: React.RefObject<HTMLDivElement> = React.createRef();
     const refDivObject: {
@@ -112,20 +113,22 @@ const Menu = (props: MenuContainerProps) => {
     function clickMenu(e: React.MouseEvent) {
         const dataName: MenuStateType['refType'] | string = e.currentTarget.getAttribute('data-name');
 
-        switch (dataName) {
-            case 'ref_introduce':
-            case 'ref_skill':
-            case 'ref_project':
-            case 'ref_question':
-                changePageName(dataName);
-                const refObjectKeys: Array<string> = Object.keys(refDivObject);
-                refObjectKeys.map((key: MenuStateType['refType']) => {
-                    refDivObject[key].current.style.opacity = '0';
-                });
+        if (!disabled_button) {
+            switch (dataName) {
+                case 'ref_introduce':
+                case 'ref_skill':
+                case 'ref_project':
+                case 'ref_question':
+                    changePageName(dataName);
+                    const refObjectKeys: Array<string> = Object.keys(refDivObject);
+                    refObjectKeys.map((key: MenuStateType['refType']) => {
+                        refDivObject[key].current.style.opacity = '0';
+                    });
 
-                ref_goBackButton.current.style.opacity = '0';
-                break;
-            default: break;
+                    ref_goBackButton.current.style.opacity = '0';
+                    break;
+                default: break;
+            }
         }
     }
 
@@ -162,6 +165,7 @@ const Menu = (props: MenuContainerProps) => {
                             refDivObject[key].current.style.left = '0%';
                         }
                     });
+                    change_disabled_button(false);
                 }, 1300);
             }, 500);
         }

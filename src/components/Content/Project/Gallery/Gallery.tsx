@@ -12,7 +12,11 @@ import mirrorMain from '@assets/project/mirrorMain.jpeg';
 import Site1 from '@assets/project/site-1.jpeg';
 import Site2 from '@assets/project/site-2.jpeg';
 import Site3 from '@assets/project/site-3.jpeg';
+import Site4 from '@assets/project/site-4.jpeg';
 import Shinbo1 from '@assets/project/shinbo-1.jpeg';
+import Shinbo2 from '@assets/project/shinbo-2.jpeg';
+import Shinbo3 from '@assets/project/shinbo-3.jpeg';
+import Shinbo4 from '@assets/project/shinbo-4.jpeg';
 
 
 import './Gallery.scss';
@@ -22,8 +26,7 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons/faExternalL
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons/faAngleLeft';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons/faAngleRight';
 
-type GalleryPropsType = {
-};
+type GalleryPropsType = {};
 type GalleryStateType = {};
 
 const Gallery = (props: GalleryPropsType) => {
@@ -80,6 +83,9 @@ const Gallery = (props: GalleryPropsType) => {
             }, {
                 type: 'image',
                 src: Site3
+            }, {
+                type: 'image',
+                src: Site4
             }],
             data: '2017.10-2017.11',
             explanation: 'Cublick 회사를 소개해 주는 홈페이지이다.',
@@ -108,6 +114,15 @@ const Gallery = (props: GalleryPropsType) => {
             picture: [{
                 type: 'image',
                 src: Shinbo1
+            }, {
+                type: 'image',
+                src: Shinbo2
+            }, {
+                type: 'image',
+                src: Shinbo3
+            }, {
+                type: 'image',
+                src: Shinbo4
             }],
             data: '2020.07-2020.09',
             explanation: 'ShinboINC 회사에 대한 소개 및 지도와 옷감의 종류, 색감 수량 등을 나타내는 홈페이지이다. 로컬서버를 이용하여 홈페이지 관리자가 직접 옷감의 사진과 데이터들을 수정가능하다.',
@@ -246,7 +261,6 @@ const Gallery = (props: GalleryPropsType) => {
                         slide_image.style.opacity = '0';
                         slide_image.style.left = '-100%';
                     } else {
-                        console.log(slide_image.style.left.split('%')[0] * 1 + 100);
                         slide_image.style.left = `${slide_image.style.left.split('%')[0] * 1 + 100}%`;
                     }
                 });
