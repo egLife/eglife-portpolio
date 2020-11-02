@@ -98,11 +98,14 @@
         z-index: 130;
 
         .popUp_main {
+            opacity: 0;
             top: 50px;
             width: 600px;
             height: 650px;
             position: relative;
             margin: 0 auto;
+            transition: all 0.3s;
+            transform: scale(0.2);
 
             .image_slide {
                 position: relative;

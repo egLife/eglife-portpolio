@@ -1,6 +1,6 @@
 {
   "name": "eglife-portpolio",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "React typescript code for portpolio",
   "repository": "https://github.com/egLife/React_Portpolio.git",
   "author": "Shin <tlsdmsrb0427@naver.com>",
@@ -8,13 +8,16 @@
   "private": true,
   "scripts": {
     "dev": "npm run server",
-    "server": "cross-env NODE_ENV=development ts-node config/server.ts"
+    "server": "cross-env NODE_ENV=development ts-node config/server.ts",
+    "build": "npm run build-production",
+    "build-production": "cross-env NODE_ENV=production webpack -r ts-node/register --config config/webpack.config.production.ts --progress --profile --colors"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "connected-react-router": "^6.8.0",
+    "emailjs-com": "^2.6.3",
     "history": "^4.10.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

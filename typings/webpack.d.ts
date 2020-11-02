@@ -4,3 +4,4 @@ declare module 'terser-webpack-plugin';
 declare module 'webpack-dashboard';
 declare module 'webpack-dashboard/plugin';
 declare module 'webpack-md5-hash';
+declare module 'emailjs-com';

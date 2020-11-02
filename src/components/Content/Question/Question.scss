@@ -1,11 +1,257 @@
-// #Content__Question {
-//     width: 0%;
-//     height: 0%;
-//     top: 50%;
-//     z-index: 101;
-//     left: 50%;
-//     position: absolute;
-//     background-color: #04c2c9;
-//     transition-property: left, top, height, width;
-//     transition-duration: 1s;
-// }
+#Content__Question {
+    .Content__Main__Background {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    #Content__Main__Title {
+        background-color: rgba(37,41,52,0.9);
+        color: white;
+    }
+
+    #Content__Main__Content {
+        background-color: rgba(37,41,52,0.9);
+        color: white;
+    }
+
+    #Content__Main__Foot {
+        button {
+            background-color: rgba(37,41,52,0.9);
+            color: white;
+
+            &:hover {
+                background-color: #04c2c9;
+                svg {
+                    color: white;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+
+    .Cotent__Question__Main {
+        width: 800px;
+        height: 100%;
+        position: relative;
+        margin: 0 auto;
+        text-align: center;
+
+        .question_subtitle {
+            color: #04c2c9;
+            font-weight: 600;
+            font-size: 15pt;
+            padding-top: 13%;
+            padding-bottom: 5%;
+            animation: slideInRight 0.75s ease both;
+            animation-delay: 0.5s;
+        }
+        .question_email {
+            width:55%;
+            float: left;
+            animation: popIn 1s both;
+            animation-delay: 0.5s;
+            .whether_success_fail {
+                width: 55%;
+                position: absolute;
+                height: 0px;
+                overflow: hidden;
+                transition-property: height;
+                transition-duration: 0.3s;
+
+                p {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    padding: 0;
+                    line-height: 50px;
+                    margin: 0 auto;
+                    font-size: 12pt;
+                }
+
+                i {
+                    position: relative;
+                    float: right;
+                    line-height: 55px;
+                    margin-right: 18px;
+                    cursor: pointer;
+                }
+            }
+            .input_contact_data {
+                width: 100%;
+                background: #0e1115;
+                border: 0;
+                box-sizing: border-box;
+                color: #fff;
+                display: block;
+                font-size: 12pt;
+                margin-bottom: 3px;
+                outline: none;
+                padding: 10px 15px;
+            }
+            .submit_contact_data {
+                background: transparent;
+                color: #fff;
+                font-size: 12pt;
+                margin: 5px 0 0 0;
+                outline: 0;
+                padding: 10px 30px;
+                border: 2px solid white;
+                box-sizing: inherit;
+                cursor: pointer;
+                display: block;
+                float: right;
+                color: #e31b6d;
+                transition-property: color, background-color, border-color;
+                transition-duration: 0.3s;
+
+                &:hover {
+                    color: white;
+                    background-color: #e31b6d;
+                    border-color: #e31b6d;
+                }
+            }
+            textarea {
+                margin-bottom: 5px;
+                min-height: 150px;
+                background: #0e1115;
+                border: 0;
+                box-sizing: border-box;
+                color: #fff;
+                display: block;
+                font-size: 12pt;
+                margin-bottom: 3px;
+                outline: none;
+                padding: 10px 15px;
+                width: 100%;
+                resize: none;
+            }
+        }
+        .question_myinformation {
+            width: 40%;
+            float: left;
+
+            padding-left: 30px;
+
+            animation: slideInRight 0.75s ease both;
+            animation-delay: 0.5s;
+
+            ul {
+                padding: 0;
+                padding-top: 15px;
+                margin: 0;
+                list-style: none;
+                text-align: left;
+            }
+
+            .circle {
+                display: inline-block;
+                text-align: center;
+                margin-right: 20px;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                border: solid 1px;
+                font-size: 15pt;
+                border-radius: 100px;
+                margin-bottom: 20px;
+            }
+            p {
+                display: inline-block;
+                font-size: 13pt;
+            }
+        }
+    }
+}
+
+// screen on window
+@media screen and (max-width: 830px) {
+    #Content__Question {
+        .Cotent__Question__Main {
+            width: 500px;
+            
+            .question_email {
+                width: 100%;
+
+                .whether_success_fail {
+                    width: 100%;
+                }
+            }
+
+            .question_myinformation {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// screen on window
+@media screen and (max-width: 530px) {
+    #Content__Question {
+        .Cotent__Question__Main {
+            width: 300px;
+
+            .question_email {
+                .whether_success_fail {
+                    p {
+                        font-size: 9pt;
+                    }
+                }
+            }
+
+            .question_myinformation {
+                ul {
+                    margin-top: 30px;
+                }
+
+                .circle {
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    font-size: 10pt;
+                }
+
+                p {
+                    font-size: 10pt;
+                }
+            }
+        }
+    }
+}
+
+// screen on window
+@media screen and (max-width: 330px) {
+    #Content__Question {
+        .Cotent__Question__Main {
+            width: 200px;
+
+            .question_email {
+                .whether_success_fail {
+                    p {
+                        font-size: 7pt;
+                    }
+                }
+            }
+
+            .question_subtitle {
+                font-size: 10pt;
+                padding-top: 50px;
+            }
+
+            .question_myinformation {
+                padding-left: 10px;
+                ul {
+                    margin-top: 30px;
+                }
+
+                .circle {
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    font-size: 8pt;
+                }
+
+                p {
+                    font-size: 8pt;
+                }
+            }
+        }
+    }
+}

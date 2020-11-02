@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Player1 from '@assets/project/player-1.jpeg';
 import Player2 from '@assets/project/player-2.jpeg';
@@ -30,6 +30,7 @@ type GalleryPropsType = {};
 type GalleryStateType = {};
 
 const Gallery = (props: GalleryPropsType) => {
+    const ref_popUp: React.RefObject<HTMLDivElement> = React.createRef();
     const [status, changeStatus] = useState(false);
     const [galleryData, changeData] = useState('' as any);
     const [blockDoubleClick, changeBlockDoubleClick] = useState(true);
@@ -129,6 +130,14 @@ const Gallery = (props: GalleryPropsType) => {
             site: 'http://shinboinc.com/#/'
         }];
 
+    useEffect(() => {
+        console.log(ref_popUp.current);
+        if (ref_popUp.current !== null) {
+            ref_popUp.current.style.opacity = '1';
+            ref_popUp.current.style.transform = 'scale(1)';
+        }
+    }, [status]);
+
     return (
         <div id='gallery'>
             {
@@ -158,8 +167,8 @@ const Gallery = (props: GalleryPropsType) => {
             {
                 status
                 ?
-                    <div className='popUp'>
-                        <div className='popUp_main'>
+                    <div className='popUp' >
+                        <div className='popUp_main' ref={ref_popUp}>
                             <div className='image_slide'>
                             {
                                 galleryData.picture.map((picture_data: any, index: number) => {
@@ -233,8 +242,12 @@ const Gallery = (props: GalleryPropsType) => {
     }
 
     function closePopUp() {
-        changeStatus(false);
-        changeData('');
+        ref_popUp.current.style.transform = 'scale(0.2)';
+        ref_popUp.current.style.opacity = '0';
+        setTimeout(() => {
+            changeStatus(false);
+            changeData('');
+        }, 300);
     }
 
     function slide(type: 'LEFT' | 'RIGHT') {

@@ -9,9 +9,9 @@ type ContentStateType = {};
 
 const Content = (props: ContentPropsType) => {
     return (
-        <div id='Content__Main__Content'>
+        <section id='Content__Main__Content'>
             {props.contentdData}
-        </div>
+        </section>
     );
 };
 

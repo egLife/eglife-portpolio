@@ -50,3 +50,20 @@
         transform: perspective(400px);
     }
 }
+
+@keyframes popIn {
+    0% {
+        transform: scale(0);
+    }
+    60% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    80% {
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

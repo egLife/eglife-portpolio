@@ -10,9 +10,9 @@ type TitleStateType = {};
 const Title = (props: TitlePropsType) => {
 
     return (
-        <div id='Content__Main__Title'>
+        <section id='Content__Main__Title'>
             {props.title}
-        </div>
+        </section>
     );
 };
 

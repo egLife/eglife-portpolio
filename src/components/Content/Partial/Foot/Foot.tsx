@@ -11,13 +11,13 @@ type FootStateType = {};
 
 const Foot = (props: FootPropsType) => {
     return (
-        <div id='Content__Main__Foot'>
+        <footer id='Content__Main__Foot'>
             <button onClick={() => {
                 props.closeComponent();
             }}>
                 <FontAwesomeIcon icon={faArrowLeft}/>
             </button>
-        </div>
+        </footer>
 
     );
 };
