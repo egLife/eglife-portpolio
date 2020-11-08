@@ -242,3 +242,43 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    #gallery {
+        .popUp {
+            .popUp_main  {
+                width: 400px;
+
+                .content {
+                    .bold {
+                        font-size: 15pt;
+                    }
+                    .sub_title {
+                        font-size: 13pt;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    #gallery {
+        .popUp {
+            .popUp_main  {
+                width: 250px;
+
+                .content {
+                    .bold {
+                        font-size: 11pt;
+                    }
+                    .sub_title {
+                        font-size: 5pt;
+                    }
+                    .detail {
+                        font-size: 7pt;
+                    }
+                }
+            }
+        }
+    }
+}

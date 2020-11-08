@@ -7,7 +7,7 @@ import { faHourglass } from '@fortawesome/free-solid-svg-icons/faHourglass';
 
 import Partial_Main from '../Partial/Main';
 
-import Background from '@assets/images/menu_background.jpeg';
+import face from '@assets/project/신은규.jpeg';
 
 import './Introduce.scss';
 
@@ -33,7 +33,7 @@ const Introduce = (props: IntroducePropsType) => {
             <div className='Content__Introduce__Main'>
                 <div className='Content__Introduce__MySelf'>
                     <div className='Content__Introduce__Picture'>
-                        <img src={Background}></img>
+                        <img src={face}></img>
                     </div>
                     <div className='Content__Introduce__Text'>
                         <h4>신은규 申銀圭</h4>
